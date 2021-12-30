@@ -4,7 +4,7 @@
 steps:
 # Build the generator for testing later.
 - name: gcr.io/cloud-builders/docker
-  args: [ 'build', '-t', 'generator', '/dockerfile_generator' ]
+  args: [ 'build', '-t', 'generator', '/runtimes/dockerfile_generator' ]
   id: 'generator-build'
   waitFor: ['-']
 

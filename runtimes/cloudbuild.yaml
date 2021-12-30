@@ -4,7 +4,7 @@
 steps:
 # Build the generator for testing later.
 - name: gcr.io/cloud-builders/docker
-  args: [ 'build', '-t', 'generator', './dockerfile_generator' ]
+  args: [ 'build', '-t', 'generator', '/dockerfile_generator' ]
   id: 'generator-build'
   waitFor: ['-']
 
@@ -13,7 +13,7 @@ steps:
   # .NET Core 3.1.x
 - name: gcr.io/cloud-builders/docker
   args: [ 'build', '-t', '${_DOCKER_NAMESPACE}/aspnetcore:3.1-${_TAG}',
-          '--no-cache', '--pull', './versions/aspnetcore-3.1/image' ]
+          '--no-cache', '--pull', '/versions/aspnetcore-3.1/image' ]
   id: 'aspnetcore-3-1-build'
   waitFor: ['-']
 - name: gcr.io/gcp-runtimes/structure_test

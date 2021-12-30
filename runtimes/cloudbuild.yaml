@@ -2,14 +2,6 @@
 #   _DOCKER_NAMESPACE, the repository where to push the images.
 #   _TAG, the tag to use for the published images.
 steps:
-# Build the generator for testing later.
-- name: gcr.io/cloud-builders/docker
-  args: [ 'build', '-t', 'generator', '/runtimes/dockerfile_generator' ]
-  id: 'generator-build'
-  waitFor: ['-']
-
-
-
   # .NET Core 3.1.x
 - name: gcr.io/cloud-builders/docker
   args: [ 'build', '-t', '${_DOCKER_NAMESPACE}/aspnetcore:3.1-${_TAG}',

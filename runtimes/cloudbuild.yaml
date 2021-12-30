@@ -34,7 +34,7 @@ steps:
   args: [ '-c', '[[ "$(dotnet /app/app.dll)" == "Hello World 3.1!" ]]' ]
   waitFor: [ 'test-app-build-3-1' ]
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['run', 'deploy', 'myservice1', '--image', 'asia.gcr.io/$PROJECT_ID/aspnetcore', '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated']
+  args: ['run', 'deploy', 'myservice1', '--image', '${_DOCKER_NAMESPACE}/aspnetcore:3.1-${_TAG}', '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated']
 
   
 

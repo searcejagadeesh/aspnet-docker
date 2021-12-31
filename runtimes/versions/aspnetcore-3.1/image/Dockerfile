@@ -40,7 +40,7 @@ RUN mkdir -p /usr/share/dotnet && \
     ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet
 
 # Define the environment variables
-ENV PORT=8080
+ENV PORT=8081
 ENV ASPNETCORE_URLS=http://*:${PORT}
 
 # Expose the port for the app.

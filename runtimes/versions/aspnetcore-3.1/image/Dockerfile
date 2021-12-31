@@ -44,4 +44,4 @@ ENV PORT=8080
 ENV ASPNETCORE_URLS=http://*:${PORT}
 
 # Expose the port for the app.
-EXPOSE $PORT
+EXPOSE PORT

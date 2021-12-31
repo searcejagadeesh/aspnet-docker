@@ -32,8 +32,9 @@ steps:
   id: 'test-app-run-3-1'
   entrypoint: 'bash'
   args: [ '-c', '[[ "$(dotnet /app/app.dll)" == "Hello World 3.1!" ]]' ]
-  waitFor: [ 'test-app-build-3-1' ] - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['run', 'deploy', 'myservice', '--image', 'asia.gcr.io/cloudbuild-335908/aspnetcore:3.1-dev', '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated']
+  waitFor: [ 'test-app-build-3-1' ] 
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['run', 'deploy', 'myservice2', '--image', 'asia.gcr.io/cloudbuild-335908/aspnetcore:3.1-dev', '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated']
 
 
   # Publish the images.
